@@ -2,6 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
+
+
     modulePrefix: 'inveo-systems',
     environment: environment,
     baseURL: '/',
@@ -11,6 +13,11 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'home',
+      routeIfAlreadyAuthenticated: 'home',
     },
 
     APP: {

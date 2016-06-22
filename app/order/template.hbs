@@ -4,7 +4,7 @@
   </div>
 
   <ul class="nav nav-tabs">
-    {{#link-to "home" tagName="li" href=false}}{{#link-to "home"}}Cancel{{/link-to}}{{/link-to}}
+    {{!-- {{#link-to "home" tagName="li" href=false}}{{#link-to "home"}}Cancel{{/link-to}}{{/link-to}} --}}
   </ul>
 
   {{!-- {{#simple-form startingValues=model onsubmit=(action saveOrder) as |order|}} --}}
@@ -47,7 +47,7 @@
           </div>
 
           {{! Display data for item type }}
-          {{#if (eq order.itemType "laptop") }}
+          {{!-- {{#if (eq order.itemType "laptop") }} --}}
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -68,7 +68,7 @@
               <label for="order-item-description">Laptop Description</label>
               {{textarea id="order-item-description" class="form-control" value=order.item.description readonly=true}}
             </div>
-          {{/if}}
+          {{!-- {{/if}} --}}
         </fieldset>
 
 

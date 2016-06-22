@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-admin-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    {{#link-to "home" class="navbar-brand"}}Inveo Systems{{/link-to}}
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Admin <small>Welcome, {{currentUser.model.email}}!</small></h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-lg-2">
+      <ul class="nav nav-pills nav-stacked">
+        {{#link-to "admin.index" tagName="li" href=false}}{{#link-to "admin.index"}}Dashboard{{/link-to}}{{/link-to}}
+        {{#link-to "admin.laptop" tagName="li" href=false}}{{#link-to "admin.laptop"}}Laptops{{/link-to}}{{/link-to}}
+        {{#link-to "admin.order" tagName="li" href=false}}{{#link-to "admin.order"}}Orders{{/link-to}}{{/link-to}}
+      </ul>
+    </div>
+
+    <div class="col-md-8 col-lg-10d">
+      {{outlet}}
+    </div>
+  </div>
+</div>

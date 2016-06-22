@@ -1,0 +1,20 @@
+@import "yoga";
+@import 'login';
+@import 'variables';
+@import 'box-sizing';
+@import 'home';
+@import 'register';
+@import 'about';
+@import 'reviews';
+
+// Uncomment this for working with yoga prototyping
+// http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
+// @include yoga-prototype();
+
+
+.signin,
+.signup {
+  background-color: $brand-base-color;
+  color: $brand-nav-section;
+  text-decoration: none;
+}

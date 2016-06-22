@@ -6,6 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('reviews');
   this.route('register');
   this.route('order');
   this.route('logout');

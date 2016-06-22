@@ -6,7 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('order');
+  this.route('order', function() {
+    this.route('edit');
+  });
   this.route('logout');
   this.route('login');
   this.route('home');

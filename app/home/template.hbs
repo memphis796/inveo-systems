@@ -1,0 +1,109 @@
+
+<div class="container-fluid">
+
+
+  <div class="home-img__container">
+
+    <div class="home-screen__text">
+      <h1 class="main-heading">CRUSH YOUR COMPETION</h1>
+    </div>
+
+    <div class="main-heading__subheading">
+      <p>Inveo Systems' custom gaming notebooks are built with the latest nex-gen
+        technology to offer an immersive gaming experience anywhere that you want to go.</p>
+      </div>
+
+    <img class="homepage-image" src='/p870-0.png' alt="" />
+
+   <div class="gaming-button">
+     <button class="gaming-button__text">View Gaming Systems</button>
+   </div>
+  </div>
+
+
+
+
+    <div class="info-area">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="about-product">
+            <h4 class="about-product__heading">EVERYTHING YOU WILL EVER NEED</h4>
+            <p class="about-product__text">Equipped with high-performance mobile components that are on par with most desktop computers, these are the best gaming laptops for handling any application for work or school with incredible ease. Confidence is preeminent on all custom Digital Storm notebooks with their ability to be versatile and adaptable to any task you might throw at them.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="about-product">
+            <h4 class="about-product__heading">THE POWER</h4>
+            <p class="about-product__text">Experience stunning visuals regardless of whether you’re plugged in at home or on the go. Our laptops for gaming are equipped with powerful yet light-weight lithium batteries that deliver hours of high-resolution, mouth-watering gaming; they don’t under-perform just because there isn’t a wall socket nearby.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="about-product">
+            <h4 class="about-product__heading">WANT MORE?</h4>
+            <p class="about-product__text">Unlike retailers that cram their gaming computers with “free” software you’ll never use, Inveo Systems gaming laptops come absolutely clean. The only thing you’ll see is an empty desktop that gives you the freedom to make your dream high-performance PC your own. So if you need more, we'll give you more with our nex-gen machines coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="product-heading">
+      <h1>SELECT A MODEL</h1>
+    </div>
+
+    <div class="product-section">
+      <div class="row">
+        {{#each model as |laptop|}}
+          <div class="col-md-4 col-lg-3">
+            <div class="gaming__laptops">
+              <h4 class="laptop__container-top">{{laptop.screenSize}}</h4>
+              <div class="laptop__container">
+                <p class="laptop__container-text">{{laptop.description}}</p>
+
+                <div class="img-container">
+                  <img class="laptop__img" src="{{laptop.image}}" alt="" />
+                  <div class="laptop__img-text">
+                    <p>Starting at</p>
+                    <p>{{laptop.price}}</p>
+                    <button class="select-button">{{#link-to 'order' (query-params item-id=laptop.id item-type='laptop')}}SELECT{{/link-to}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="footer-section">
+
+      <div class="about-us">
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Our Passion{{/link-to}}</button> --}}
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Financing{{/link-to}}</button> --}}
+      </div>
+
+      <div class="products">
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Gaming Laptops{{/link-to}}</button> --}}
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Gaming Desktops{{/link-to}}</button> --}}
+      </div>
+
+      <div class="reviews">
+          {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Customers Reviews{{/link-to}}</button> --}}
+      </div>
+
+      <div class="support">
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Request help{{/link-to}}</button> --}}
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}FAQ{{/link-to}}</button> --}}
+        {{!-- <button class="footer-section__button">{{#link-to '' class="footer-section__links"}}Warranty Details{{/link-to}}</button> --}}
+      </div>
+
+    </div>
+
+    <div class="bottom-footer">
+      <p class="bottom-footer__text">Copyright &#169; 2016 Inveo Systems. All Rights Reserved</p>
+    </div>
+</div>
+
+
+{{outlet}}

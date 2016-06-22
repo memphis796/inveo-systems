@@ -1,0 +1,43 @@
+{{!-- {{#simple-form class="form-container" onsubmit=(action login) as |formValues|}}
+  {{input placeholder="email" type="text" value=formValues.email}}
+  {{input placeholder="password" type="password" value=formValues.password}}
+  <button>Login</button>
+{{/simple-form}} --}}
+
+<div class="container">
+
+    <div class="logo-name">
+      <h3 class="title">Inveno Systems &#174;</h3>
+    </div>
+
+    <div class="subcontainer">
+
+     <div class="login-form">
+
+    {{!-- {{#simple-form onsubmit=(action login) as |formValues|}} --}}
+
+        <div class="upper-login">
+          <label class="label-name">Email:</label>
+          {{input class="input-name" value=formValues.email placeholder='email'}}
+        </div>
+
+        <div class="lower-login">
+          <label class="label-name">Password:</label>
+          {{input class="" type='password' value=formValues.password placeholder='password' class="password-input"}}
+        </div>
+
+        <div class="form-button">
+            <button class="button">Login</button>
+       </div>
+    {{!-- {{/simple-form}} --}}
+
+    </div>
+
+     <div class="login-form__text">
+       <p class="login-form__subtext">Private Cloud &#64; labInveno Systems</p>
+     </div>
+
+   </div>
+  </div>
+
+{{outlet}}

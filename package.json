@@ -52,6 +52,13 @@
     "ember-simple-auth-loopback": "1.0.2",
     "ember-simple-form": "1.0.1",
     "ember-truth-helpers": "^1.2.0",
+<<<<<<< HEAD
+    "ember-yoga-sass": "1.0.0",
+    "eslint": "^2.13.1",
+    "eslint-config-rtablada": "^2.0.0",
+    "loader.js": "^4.0.1",
+    "sass-lint": "^1.8.0",
+=======
     "ember-with-service": "1.1.0",
     "ember-yoga-sass": "1.0.0",
     "eslint": "^2.8.0",
@@ -59,6 +66,7 @@
     "liquid-fire": "0.23.0",
     "loader.js": "^4.0.1",
     "sass-lint": "^1.6.2",
+>>>>>>> 13a8abcee8a8c16e9a263d41a1c0dbb766562199
     "yoga-sass": "1.0.1"
   }
 }

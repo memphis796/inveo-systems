@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Orders Index</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Item ID</th>
+          <th>Item Type</th>
+          <th>Quantity</th>
+          <th>Price Per Unit</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each model as |order|}}
+          <tr>
+            <td>{{order.id}}</td>
+            <td>{{order.paymentCreditCardName}}</td>
+            <td>{{order.itemId}}</td>
+            <td>{{order.itemType}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.pricePerUnit}}</td>
+            <td>
+              {{#link-to "admin.order.edit" order.id class="btn btn-info"}}
+                <span class="fa fa-pencil fa-fw"></span>
+              {{/link-to}}
+              <button class="btn btn-danger" {{action "destroyRecord" order}}>
+                <span class="fa fa-trash fa-fw"></span>
+              </button>
+            </td>
+          </tr>
+          {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{outlet}}

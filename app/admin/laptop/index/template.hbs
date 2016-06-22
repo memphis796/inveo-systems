@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Laptops Index</h2>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Screen Size</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each model as |laptop|}}
+          <tr>
+            <td>{{laptop.id}}</td>
+            <td>{{laptop.name}}</td>
+            <td>{{laptop.color}}</td>
+            <td>{{laptop.screenSize}}</td>
+            <td>{{laptop.price}}</td>
+            <td>
+              {{#link-to "admin.laptop.edit" laptop.id class="btn btn-info"}}
+                <span class="fa fa-pencil fa-fw"></span>
+              {{/link-to}}
+              <button class="btn btn-danger" {{action "destroyRecord" laptop}}>
+                <span class="fa fa-trash fa-fw"></span>
+              </button>
+            </td>
+          </tr>
+          {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{outlet}}

@@ -1,0 +1,88 @@
+
+.container {
+  height: 100vh;
+}
+
+.logo-name {
+  height: 20rem;
+}
+
+.title {
+  width: 26%;
+  margin-left: 29rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: $brand-text;
+  color: $brand-color-bg;
+  text-align: center;
+}
+
+.subcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  padding: 0.6rem 1.2rem;
+  border-right: 1px solid $brand-base-color;
+  border-radius: 0.5rem;
+  background-color: $brand-text;
+}
+
+.upper-login {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.label-name {
+  padding: 0 0.8rem;
+  background-color: $brand-text;
+  color: $brand-color-bg;
+}
+
+.lower-login {
+  display: flex;
+  margin-left: 0.06rem;
+}
+
+.password-input {
+  margin-left: 0.2rem;
+}
+
+.submit-button__text {
+  text-decoration: none;
+}
+
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  margin: 1rem 0;
+  border: 0;
+  background-color: $brand-text;
+  color: $brand-nav-section;
+  font-size: 1rem;
+
+
+  &:hover {
+    cursor: pointer;
+   }
+  }
+
+.login-form__text {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.login-form__subtext {
+  margin-top: 0;
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+  background-color: $brand-color-bg;
+  color: $brand-text;
+  font-weight: bolder;
+}

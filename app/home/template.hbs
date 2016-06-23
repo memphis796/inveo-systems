@@ -68,7 +68,7 @@
         {{#each model as |laptop|}}
           <div class="col-md-4 col-lg-3">
             <div class="gaming__laptops">
-              <h4 class="laptop__container-top">{{laptop.screenSize}}</h4>
+              <h4 class="laptop__container-top">{{laptop.screenSize}}"</h4>
               <div class="laptop__container">
                 <p class="laptop__container-text">{{laptop.description}}</p>
 
@@ -76,7 +76,7 @@
                   <img class="laptop__img" src="{{laptop.image}}" alt="" />
                   <div class="laptop__img-text">
                     <p>Starting at</p>
-                    <p>{{laptop.price}}</p>
+                    <p>${{laptop.price}}</p>
                     <button class="select-button">{{#link-to 'order' (query-params item-id=laptop.id item-type='laptop')}}SELECT{{/link-to}}</button>
                   </div>
                 </div>

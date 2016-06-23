@@ -7,37 +7,37 @@
 
     <div class="panel-body">
       <div class="form-group">
-        <label for="laptop-name">Laptop Name</label>
+        <label for="laptop-name"><span class="laptop-name">Laptop Name</span></label>
         {{input type="text" id="laptop-name" class="form-control" value=laptop.name}}
       </div>
 
       <div class="form-group">
-        <label for="laptop-name">Laptop Color</label>
+        <label for="laptop-name"><span class="laptop-color">Laptop Color</span></label>
         {{input type="text" id="laptop-color" class="form-control" value=laptop.color}}
       </div>
 
       <div class="form-group">
-        <label for="laptop-description">Laptop Description</label>
+        <label for="laptop-description"><span class="laptop-desc">Laptop Description</span></label>
         {{textarea id="laptop-description" class="form-control" value=laptop.description}}
       </div>
 
       <div class="form-group">
-        <label for="laptop-screen-size">Laptop Screen Size</label>
+        <label for="laptop-screen-size"><span class="laptop-screen">Laptop Screen Size</span></label>
         {{input type="text" id="laptop-screen-size" class="form-control" value=laptop.screenSize}}
       </div>
 
       <div class="form-group">
-        <label for="laptop-price">Laptop Price</label>
+        <label for="laptop-price"><span class="laptop-price">Laptop Price</span></label>
         {{input type="text" id="laptop-price" class="form-control" value=laptop.price}}
       </div>
 
       <div class="form-group">
-        <label for="laptop-image">Laptop Image</label>
+        <label for="laptop-image"><span class="laptop-image">Laptop Image</span></label>
         {{input type="text" id="laptop-image" class="form-control" value=laptop.image}}
       </div>
 
       <div class="form-group">
-        {{#link-to "admin.laptop" class="btn btn-default"}}Cancel{{/link-to}}
+        {{#link-to "admin.laptop" class="btn btn-default nav-list"}}Cancel{{/link-to}}
         <button class="btn btn-primary">Create</button>
       </div>
     </div>

@@ -11,7 +11,44 @@
 }
 
 .nav-list {
-  color: $brand-nav-section;
+  color: $brand-title;
   text-decoration: none;
   list-style-type: none;
+}
+
+.container-fluid {
+  background-color: $brand-admin-background;
+}
+
+.page-header {
+  margin-left: 1rem;
+}
+
+.admin-dashboard {
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.form-group {
+  padding: 0.5rem;
+}
+
+.laptop-color {
+  padding-right: 3.2rem;
+  }
+
+.laptop-name {
+  padding-right: 2.9rem;
+}
+
+.laptop-screen {
+  padding-right: 0.3rem;
+}
+
+.laptop-price {
+  padding-right: 3.4rem;
+}
+
+.laptop-image {
+  padding-right: 2.9rem;
 }

@@ -94,7 +94,7 @@
 }
 
 .gaming__laptops {
-  margin: 1rem;
+  margin: 1rem 1rem 0;
 }
 
 .laptop__container-top {
@@ -118,14 +118,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  width: 100%;
 
   margin: auto;
   padding: 1rem;
 }
 
 .laptop__img {
-  width: 100%;
+  width: 40%;
+  margin: auto;
 
   &-text {
     display: flex;

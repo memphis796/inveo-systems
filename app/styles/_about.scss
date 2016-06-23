@@ -1,26 +1,32 @@
 about-page {
-  //padding: 0 0 3rem 3rem;
-  //background-color: black;
-  //color: red;
+  padding: 0 0 3rem 3rem;
+  background-color: $brand-base-color;
+  color: $brand-nav-section;
 }
 
 .about-page__image {
   display: flex;
+  background-color: $brand-base-color;
 }
 
 .about-page__heading {
   display: flex;
   align-self: center;
+  margin-left: 1rem;
+  color: $brand-nav-section;
 }
 
 .about-page__p1 {
-  //width: 54%;
+  margin-left: 1.5rem;
+  color: $brand-text;
 }
 
 .about-page__subheading {
-
+  margin: 2rem;
+  color: $brand-nav-section;
 }
 
 .about-page__p2 {
-
+  margin-left: 1.5rem;
+  color: $brand-text;
 }

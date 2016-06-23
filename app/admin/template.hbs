@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
 
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-admin-navbar-collapse-1" aria-expanded="false">
+    <button type="button" class="navbar-toggle collapsed sr-only" data-toggle="collapse" data-target="#bs-admin-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -18,10 +18,10 @@
 
   <div class="row">
     <div class="col-md-4 col-lg-2">
-      <ul class="nav nav-pills nav-stacked" id="nav-list">
-        {{#link-to "admin.index" tagName="li" href=false class="nav-list"}}{{#link-to "admin.index"}}Dashboard{{/link-to}}{{/link-to}}
-        {{#link-to "admin.laptop" tagName="li" href=false class="nav-list"}}{{#link-to "admin.laptop"}}Laptops{{/link-to}}{{/link-to}}
-        {{#link-to "admin.order" tagName="li" href=false class="nav-list"}}{{#link-to "admin.order"}}Orders{{/link-to}}{{/link-to}}
+      <ul class="nav nav-pills nav-stacked nav-list">
+        {{#link-to "admin.index" tagName="li" href=false class="nav-list"}}{{#link-to "admin.index" class="nav-list"}}Dashboard{{/link-to}}{{/link-to}}
+        {{#link-to "admin.laptop" tagName="li" href=false class="nav-list"}}{{#link-to "admin.laptop" class="nav-list"}}Laptops{{/link-to}}{{/link-to}}
+        {{#link-to "admin.order" tagName="li" href=false class="nav-list"}}{{#link-to "admin.order" class="nav-list"}}Orders{{/link-to}}{{/link-to}}
       </ul>
     </div>
 

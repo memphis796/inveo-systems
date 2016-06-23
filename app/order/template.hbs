@@ -4,7 +4,7 @@
   </div>
 
   <ul class="nav nav-tabs">
-    {{#link-to "home" tagName="li" href=false}}{{#link-to "home"}}Cancel{{/link-to}}{{/link-to}}
+    {{#link-to "home" tagName="li" href=false class="nav-list"}}{{#link-to "home" class="nav-list"}}Cancel{{/link-to}}{{/link-to}}
   </ul>
 
   {{#simple-form startingValues=model onsubmit=(action saveOrder) as |order|}}
@@ -19,28 +19,28 @@
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
-                <label for="order-item-id">Item ID</label>
+                <label for="order-item-id"><span class="label-id">Item ID</span></label>
                 {{input type="text" id="order-item-id" class="form-control" value=order.itemId readonly=true}}
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="form-group">
-                <label for="order-item-type">Item Type</label>
+                <label for="order-item-type"><span class="label-item">Item Type</span></label>
                 {{input type="text" id="order-item-type" class="form-control" value=order.itemType readonly=true}}
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="form-group">
-                <label for="order-price-per-unit">Price Per Unit</label>
+                <label for="order-price-per-unit"><span class="label-price">Price Per Unit</span></label>
                 {{input type="text" id="order-price-per-unit" class="form-control" value=order.item.price readonly=true}}
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="form-group">
-                <label for="order-quantity">Quantity</label>
+                <label for="order-quantity"><span class="label-quantity">Quantity</span></label>
                 {{input type="number" id="order-quantity" class="form-control" value=order.quantity}}
               </div>
             </div>
@@ -51,21 +51,21 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="order-item-name">Laptop Color</label>
+                  <label for="order-item-name"><span class="label-color">Laptop Color</span></label>
                   {{input type="text" id="order-item-color" class="form-control" value=order.item.color readonly=true}}
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="order-item-screen-size">Laptop Screen Size</label>
+                  <label for="order-item-screen-size"><span class="label-screen">Laptop Screen Size</span></label>
                   {{input type="text" id="order-item-screen-size" class="form-control" value=order.item.screenSize readonly=true}}
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="order-item-description">Laptop Description</label>
+              <label for="order-item-description"><span class="label-desc">Laptop Description</span></label>
               {{textarea id="order-item-description" class="form-control" value=order.item.description readonly=true}}
             </div>
           {{/if}}
@@ -75,29 +75,29 @@
         <fieldset>
           <legend>Shipping Address</legend>
           <div class="form-group">
-            <label for="order-shipping-address1">Address 1</label>
+            <label for="order-shipping-address1"><span class="label-add1">Address 1</span></label>
             {{input type="text" id="order-shipping-address1" class="form-control" value=order.shippingAddress1}}
           </div>
 
 
           <div class="form-group">
-            <label for="order-shipping-address2">Address 2</label>
+            <label for="order-shipping-address2"><span class="label-add2">Address 2</span></label>
             {{input type="text" id="order-shipping-address2" class="form-control" value=order.shippingAddress2}}
           </div>
 
 
           <div class="form-group">
-            <label for="order-shipping-state">State</label>
+            <label for="order-shipping-state"><span class="label-state">State</span></label>
             {{input type="text" id="order-shipping-state" class="form-control" value=order.shippingState}}
           </div>
 
           <div class="form-group">
-            <label for="order-shipping-city">City</label>
+            <label for="order-shipping-city"><span class="label-city">City</span></label>
             {{input type="text" id="order-shipping-city" class="form-control" value=order.shippingCity}}
           </div>
 
           <div class="form-group">
-            <label for="order-shipping-postal-code">Zip</label>
+            <label for="order-shipping-postal-code"><span class="label-zip">Zip</span></label>
             {{input type="text" id="order-shipping-postal-code" class="form-control" value=order.shippingPostalCode}}
           </div>
         </fieldset>
@@ -112,27 +112,27 @@
 
           {{#unless order.shippingIsBilling}}
             <div class="form-group">
-              <label for="order-billing-address1">Address 1</label>
+              <label for="order-billing-address1"><span class="label-add1">Address 1</span></label>
               {{input type="text" id="order-billing-address1" class="form-control" value=order.billingAddress2 disabled=order.shippingIsBilling}}
             </div>
 
             <div class="form-group">
-              <label for="order-billing-address2">Address 2</label>
+              <label for="order-billing-address2"><span class="label-add2">Address 2</span></label>
               {{input type="text" id="order-billing-address2" class="form-control" value=order.billingAddress2 disabled=order.shippingIsBilling}}
             </div>
 
             <div class="form-group">
-              <label for="order-billing-state">State</label>
+              <label for="order-billing-state"><span class="label-state">State</span></label>
               {{input type="text" id="order-billing-state" class="form-control" value=order.billingState disabled=order.shippingIsBilling}}
             </div>
 
             <div class="form-group">
-              <label for="order-billing-city">City</label>
+              <label for="order-billing-city"><span class="label-city">City</span></label>
               {{input type="text" id="order-billing-city" class="form-control" value=order.billingCity disabled=order.shippingIsBilling}}
             </div>
 
             <div class="form-group">
-              <label for="order-billing-postal-code">Zip</label>
+              <label for="order-billing-postal-code"><span class="label-zip">Zip</span></label>
               {{input type="text" id="order-billing-postal-code" class="form-control" value=order.billingPostalCode disabled=order.shippingIsBilling}}
             </div>
           {{/unless}}
@@ -142,29 +142,29 @@
         <fieldset>
           <legend>Payment</legend>
           <div class="form-group">
-            <label for="order-payment-credit-card-number">Credit Card Number</label>
+            <label for="order-payment-credit-card-number"><span class="label-credit">Credit Card Number</span></label>
             {{input type="text" id="order-payment-credit-card-number" class="form-control" value=order.paymentCreditCardNumber placeholder="Card Number"}}
           </div>
 
           <div class="form-group">
-            <label for="order-payment-credit-card-expiration">Credit Card Expiration</label>
+            <label for="order-payment-credit-card-expiration"><span class="label-expiration">Credit Card Expiration</span></label>
             {{input type="text" id="order-payment-credit-card-expiration" class="form-control" value=order.paymentCreditCardExpiration placeholder="Expiration date"}}
           </div>
 
           <div class="form-group">
-            <label for="order-payment-credit-card-name">Name on Credit Card</label>
+            <label for="order-payment-credit-card-name"><span class="label-name-on__credit">Name on Credit Card</span></label>
             {{input type="text" id="order-payment-credit-card-name" class="form-control" value=order.paymentCreditCardName}}
           </div>
 
           <div class="form-group">
-            <label for="order-payment-credit-card-cvv">CVV</label>
+            <label for="order-payment-credit-card-cvv"><span class="label-cvv">CVV</span></label>
             {{input type="text" id="order-payment-credit-card-cvv" class="form-control" value=order.paymentCreditCardCvv}}
           </div>
         </fieldset>
 
         <div class="form-group">
-          {{#link-to "home" class="btn btn-default"}}Cancel{{/link-to}}
-          <button class="btn btn-primary">Place your order</button>
+          {{#link-to "home" class="btn btn-default" class="nav-list"}}Cancel{{/link-to}}
+          <button class="btn btn-primary select-button">Place your order</button>
         </div>
       </div>
     </div>

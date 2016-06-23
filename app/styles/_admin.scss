@@ -1,17 +1,17 @@
 .navbar-brand {
-  color: red;
+  color: $brand-nav-section;
   text-decoration: none;
 }
 
 .sr-only {
+  border: 0;
+  background-color: $brand-base-color;
+  color: $brand-text;
   font-size: 1rem;
-  color: white;
-  background-color: black;
-  border: none;
 }
 
 .nav-list {
-  list-style-type: none;
+  color: $brand-nav-section;
   text-decoration: none;
-  color: red;
+  list-style-type: none;
 }

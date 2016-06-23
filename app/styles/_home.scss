@@ -4,6 +4,14 @@
   color: $brand-text;
 }
 
+.home-logout {
+  border: 0;
+  background-color: $brand-base-color;
+  color: $brand-nav-section;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
 .company-name {
   font-weight: bolder;
 }

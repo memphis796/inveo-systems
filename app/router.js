@@ -14,25 +14,23 @@ Router.map(function() {
   this.route(`register`);
 
   this.route(`checkout`);
-
-  this.route(`order`, function() {
-    this.route(`edit`, { path: '/:id' });
-  });
   this.route(`about`);
   this.route(`reviews`);
   this.route('admin', function() {
-    this.route(`order`, function() {
-      this.route(`edit`, { path: '/:id' });
-    });
     this.route(`laptop`, function() {
       this.route(`new`);
       this.route(`edit`, { path: '/:id' });
     });
+    this.route(`order`, function() {
+        this.route(`edit`, { path: '/:id' });
 
-    this.route('order');
-      this.route(`index`);
-      this.route(`laptop`);
+  this.route(`order`, function() {
+    this.route(`edit`, { path: '/:id' });
   });
+      this.route(`index`);
+    });
+  });
+  this.route('order');
 });
 
 export default Router;

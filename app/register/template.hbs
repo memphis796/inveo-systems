@@ -5,16 +5,11 @@
   <button>Register</button>
 {{/simple-form}} --}}
 <div class="register-page">
-
 <div class="input-container">
-
-
   <div class="input-section">
-
-   {{!-- {{#simple-form  onsubmit=(action register) as |formValues|}} --}}
+   {{#simple-form  onsubmit=(action register) as |formValues|}}
 
      <p class="form-heading">Register for an Account</p>
-
     <div class="input-field">
       {{input value=formValues.username placeholder='User Name' class="placeholder-field"}}
     </div>
@@ -31,11 +26,9 @@
         <button class="register-button">Register</button>
     </div>
 
-    {{!-- {{/simple-form}} --}}
-
+    {{/simple-form}}
     </div>
   </div>
-
 
    <div class="register-question">
      <p>Already have an account?{{#link-to "login" class="register-login"}}Log in{{/link-to}}</p>

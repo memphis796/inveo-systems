@@ -1,29 +1,36 @@
+
 {{#simple-form onsubmit=(action saveLaptop) as |laptop|}}
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2 class="panel-title">Creating Laptop #{{ laptop.id }}</h2>
     </div>
+
     <div class="panel-body">
       <div class="form-group">
         <label for="laptop-name">Laptop Name</label>
         {{input type="text" id="laptop-name" class="form-control" value=laptop.name}}
       </div>
+
       <div class="form-group">
         <label for="laptop-name">Laptop Color</label>
         {{input type="text" id="laptop-color" class="form-control" value=laptop.color}}
       </div>
+
       <div class="form-group">
         <label for="laptop-description">Laptop Description</label>
         {{textarea id="laptop-description" class="form-control" value=laptop.description}}
       </div>
+
       <div class="form-group">
         <label for="laptop-screen-size">Laptop Screen Size</label>
         {{input type="text" id="laptop-screen-size" class="form-control" value=laptop.screenSize}}
       </div>
+
       <div class="form-group">
         <label for="laptop-price">Laptop Price</label>
         {{input type="text" id="laptop-price" class="form-control" value=laptop.price}}
       </div>
+
       <div class="form-group">
         {{#link-to "admin.laptop" class="btn btn-default"}}Cancel{{/link-to}}
         <button class="btn btn-primary">Create</button>

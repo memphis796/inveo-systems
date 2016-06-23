@@ -6,19 +6,34 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('order', function() {
-    this.route('edit');
+  this.route(`logout`);
+
+
+  this.route(`home`);
+
+
+
+  this.route(`login`);
+  this.route(`register`);
+
+  this.route(`checkout`);
+
+  this.route(`order`, function() {
+    this.route(`edit`, { path: '/:id' });
   });
-  this.route('reviews');
-  this.route('register');
-  this.route('order');
-  this.route('logout');
-  this.route('login');
-  this.route('home');
-  this.route('checkout');
-  this.route('about');
-  this.route('admin');
-  this.route('laptop');
+  this.route(`about`);
+  this.route(`reviews`);
+  this.route('admin', function() {
+    this.route(`order`, function() {
+      this.route(`edit`, { path: '/:id' });
+      this.route(`index`);
+      this.route(`laptop`);
+    });
+    this.route(`laptop`, function() {
+      this.route(`new`);
+      this.route('order');
+   });
+  });
 });
 
 export default Router;

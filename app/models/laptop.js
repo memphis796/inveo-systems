@@ -8,4 +8,5 @@ export default Model.extend({
   screenSize: attr(),
   color: attr(),
   weight: attr(),
+  image: attr(),
 });

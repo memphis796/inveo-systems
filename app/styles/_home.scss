@@ -44,6 +44,10 @@
   display: flex;
   justify-content: center;
   color: $brand-nav-section;
+
+  &__subheading {
+    color: $brand-text;
+  }
 }
 
 .home-img__container {
@@ -80,11 +84,13 @@
 
 .about-product {
   padding: 1rem;
+  border: 1px solid $brand-text;
+  background-color: $brand-nav-section;
 
   &__heading {
     display: flex;
     justify-content: center;
-    color: $brand-nav-section;
+    color: $brand-text;
   }
 
   &__text {
@@ -95,6 +101,7 @@
 .product-heading {
   display: flex;
   justify-content: center;
+  background: $brand-text;
 }
 
 .product-section {
@@ -102,7 +109,7 @@
 }
 
 .gaming__laptops {
-  margin: 1rem 1rem 0;
+  // margin: 1rem;
 }
 
 .laptop__container-top {
@@ -147,7 +154,9 @@
   border: 0;
   border-radius: 0.4rem;
   background-color: $brand-button-color;
+  color: $brand-text;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .footer-section {

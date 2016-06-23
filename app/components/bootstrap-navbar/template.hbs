@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-home-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    {{#link-to "home" class="navbar-brand"}}Inveo Systems{{/link-to}}
+  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-home-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      {{#link-to "about" tagName="li" href=false}}{{#link-to "about"}}ABOUT US{{/link-to }}{{/link-to }}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {{#if currentUser.model }}
+        {{#link-to "logout" tagName="li" href=false}}{{#link-to "logout"}}LOGOUT{{/link-to }}{{/link-to }}
+      {{else}}
+        {{#link-to "login" tagName="li" href=false}}{{#link-to "login"}}SIGNIN{{/link-to }}{{/link-to }}
+      {{/if}}
+      {{#link-to "register" tagName="li" href=false}}{{#link-to "register"}}SIGNUP{{/link-to }}{{/link-to }}
+      {{#if (eq currentUser.model.email "admin@inveo.com")}}
+        {{#link-to "admin" tagName="li" href=false}}{{#link-to "admin"}}DASHBOARD{{/link-to }}{{/link-to }}
+      {{/if}}
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+{{yield}}

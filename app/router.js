@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('checkout');
   this.route('about');
   this.route('admin');
+  this.route('laptop');
 });
 
 export default Router;

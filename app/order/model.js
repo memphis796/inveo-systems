@@ -19,7 +19,7 @@ export default Model.extend({
   billingCity: attr('string'),
   billingPostalCode: attr('string'),
   paymentCreditCardNumber: attr('string'),
-  paymentCreditCardExpiration: attr('string'),
-  paymentCreditCardName: attr('string'),
-  paymentCreditCardCvv: attr('number'),
+  paymentCardExpiration: attr('string'),
+  CreditCardName: attr('string'),
+  CreditCardCvv: attr('number'),
 });

@@ -1,0 +1,19 @@
+.nav-lists {
+  color: $brand-nav-section;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.nav-items {
+  display: flex;
+  margin: 0 3rem;
+}
+
+.nav-links {
+  padding: 0.2rem;
+}
+
+.toggle-button {
+  border: 0;
+  background-color: $brand-base-color;
+}

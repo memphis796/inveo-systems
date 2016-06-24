@@ -31,6 +31,7 @@ Router.map(function() {
     });
   });
   this.route('order');
+  this.route('support');
 });
 
 export default Router;

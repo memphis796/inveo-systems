@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    apiHost: 'http://localhost:3000',
+    apiHost: 'http://inveo-system.herokuapp.com',
 
     modulePrefix: 'inveo-systems',
     environment: environment,

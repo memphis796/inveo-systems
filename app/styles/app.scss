@@ -1,24 +1,20 @@
-@import 'yoga';
-@import 'login';
 @import 'variables';
-@import 'box-sizing';
-@import 'home';
-@import 'register';
-@import 'about';
-@import 'reviews';
-@import 'admin';
-@import 'order';
-@import 'support';
-@import 'bootstrap-navbar';
+@import 'normalize';
+@import 'utils/unit';
+@import 'grid';
+@import 'theme';
 
-// Uncomment this for working with yoga prototyping
-// http://rtablada.github.io/yoga-sass/#mixin-yoga-prototype
-// @include yoga-prototype();
+// Text helper: left.
+.text-left {
+  text-align: left;
+}
 
+// Text helper: center.
+.text-center {
+  text-align: center;
+}
 
-.signin,
-.signup {
-  background-color: $brand-base-color;
-  color: $brand-nav-section;
-  text-decoration: none;
+// Text helper: right.
+.text-right {
+  text-align: right;
 }

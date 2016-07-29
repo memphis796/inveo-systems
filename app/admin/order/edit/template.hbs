@@ -1,159 +1,175 @@
-{{#simple-form startingValues=model onsubmit=(action updateOrder model) as |order|}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">Editing Order #{{ order.id }}</h2>
+<div class="page-header">
+  <h1>Edit Order</h1>
+</div>
+
+<div class="page-body">
+  {{#simple-form startingValues=model onsubmit=(action updateOrder model) as |order|}}
+    <div class="form-header">
+      <h2>Editing Order #{{ order.id }}</h2>
     </div>
 
-    <div class="panel-body">
-      <fieldset>
-        <legend>Product</legend>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="form-group">
-              <label for="order-item-id">Item ID</label>
-              {{input type="text" id="order-item-id" class="form-control" value=order.itemId readonly=true}}
-            </div>
-          </div>
+    <div class="form-group" role="group">
+      <div class="form-group-header">
+        <h3>Product</h3>
+      </div>
+      <div class="form-field">
+        <label for="order-item-id">Item ID</label>
+        {{input type="text" id="order-item-id" value=order.itemId readonly=true}}
+      </div>
 
-          <div class="col-md-3">
-            <div class="form-group">
-              <label for="order-item-type">Item Type</label>
-              {{input type="text" id="order-item-type" class="form-control" value=order.itemType readonly=true}}
-            </div>
-          </div>
+      <div class="form-field">
+        <label for="order-item-type">Item Type</label>
+        {{input type="text" id="order-item-type" value=order.itemType}}
+      </div>
 
-          <div class="col-md-3">
-            <div class="form-group">
-              <label for="order-price-per-unit">Price Per Unit</label>
-              {{input type="text" id="order-price-per-unit" class="form-control" value=order.item.price readonly=true}}
-            </div>
-          </div>
+      <div class="form-field">
+        <label for="order-item-price">Item Price</label>
+        {{input type="text" id="order-item-price" value=order.itemPrice}}
+      </div>
 
-          <div class="col-md-3">
-            <div class="form-group">
-              <label for="order-quantity">Quantity</label>
-              {{input type="number" id="order-quantity" class="form-control" value=order.quantity}}
-            </div>
-          </div>
+      <div class="form-field">
+        <label for="order-quantity">Quantity</label>
+        {{input type="number" id="order-quantity" value=order.quantity}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-item-screen-size">Total Price</label>
+        {{input type="text" id="order-total-price" value=order.totalPrice readonly=true}}
+        <div class="form-help">
+          <div class="form-help-text">NOTE: Total price reflects unedited quantity ({{model.quantity}}) and price ({{model.itemPrice}})</div>
         </div>
-        {{! Display data for item type }}
-        {{#if (eq order.itemType "laptop") }}
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="order-item-name">Laptop Color</label>
-                {{input type="text" id="order-item-color" class="form-control" value=order.item.color readonly=true}}
-              </div>
-            </div>
+      </div>
 
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="order-item-screen-size">Laptop Screen Size</label>
-                {{input type="text" id="order-item-screen-size" class="form-control" value=order.item.screenSize readonly=true}}
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="order-item-description">Laptop Description</label>
-            {{textarea id="order-item-description" class="form-control" value=order.item.description readonly=true}}
-          </div>
-        {{/if}}
-      </fieldset>
-
-      <fieldset>
-        <legend>Shipping Address</legend>
-        <div class="form-group">
-          <label for="order-shipping-address1">Address 1</label>
-          {{input type="text" id="order-shipping-address1" class="form-control" value=order.shippingAddress1}}
+      {{! Display data for item type }}
+      {{#if (eq order.itemType "laptop") }}
+        <div class="form-field">
+          <label for="order-item-name">Laptop Color</label>
+          {{input type="text" id="order-item-color" value=order.itemColor}}
         </div>
 
-        <div class="form-group">
-          <label for="order-shipping-address2">Address 2</label>
-          {{input type="text" id="order-shipping-address2" class="form-control" value=order.shippingAddress2}}
+        <div class="form-field">
+          <label for="order-item-screen-size">Laptop Screen Size</label>
+          {{input type="text" id="order-item-screen-size" value=order.itemScreenSize}}
         </div>
 
-        <div class="form-group">
-          <label for="order-shipping-state">State</label>
-          {{input type="text" id="order-shipping-state" class="form-control" value=order.shippingState}}
+        <div class="form-field">
+          <label for="order-item-description">Laptop Description</label>
+          {{textarea id="order-item-description" value=order.itemDescription}}
         </div>
 
-        <div class="form-group">
-          <label for="order-shipping-city">City</label>
-          {{input type="text" id="order-shipping-city" class="form-control" value=order.shippingCity}}
+        <div class="form-field">
+          <label for="order-item-image">Laptop Image</label>
+          <div class="form-control">
+            <p>{{input type="text" id="order-item-image" value=order.itemImage}}</p>
+            <img class="t-min-img-size" src="{{order.itemImage}}" alt="" />
+          </div>
+          <div class="form-help">
+            <div class="form-help-text">NOTE: Image will not change until saved.</div>
+          </div>
         </div>
+      {{/if}}
+    </div>
 
-        <div class="form-group">
-          <label for="order-shipping-postal-code">Zip</label>
-          {{input type="text" id="order-shipping-postal-code" class="form-control" value=order.shippingPostalCode}}
-        </div>
+    <div class="form-group" role="group">
+      <div class="form-group-header">
+        <h3>Shipping Address</h3>
+      </div>
+      <div class="form-field">
+        <label for="order-shipping-address1">Address 1</label>
+        {{input type="text" id="order-shipping-address1" value=order.shippingAddress1}}
+      </div>
 
-      </fieldset>
+      <div class="form-field">
+        <label for="order-shipping-address2">Address 2</label>
+        {{input type="text" id="order-shipping-address2" value=order.shippingAddress2}}
+      </div>
 
-      <fieldset>
-        <legend>Billing Address</legend>
-        <div class="form-group">
+      <div class="form-field">
+        <label for="order-shipping-state">State</label>
+        {{input type="text" id="order-shipping-state" value=order.shippingState}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-shipping-city">City</label>
+        {{input type="text" id="order-shipping-city" value=order.shippingCity}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-shipping-postal-code">Zip</label>
+        {{input type="text" id="order-shipping-postal-code" value=order.shippingPostalCode}}
+      </div>
+
+    </div>
+
+    <div class="form-group" role="group">
+      <div class="form-group-header">
+        <h3>Billing Address</h3>
+      </div>
+      <div class="form-field">
+        <label for="order-shipping-is-billing">Use shipping address for billing address</label>
+        <div class="form-control">
           {{input type="checkbox" id="order-shipping-is-billing" checked=order.shippingIsBilling}}
-          <label for="order-shipping-is-billing">Use shipping address for billing address</label>
+        </div>
+      </div>
+
+      {{#unless order.shippingIsBilling}}
+        <div class="form-field">
+          <label for="order-billing-address1">Address 1</label>
+          {{input type="text" id="order-billing-address1" value=order.billingAddress1 disabled=order.shippingIsBilling}}
         </div>
 
-        {{#unless order.shippingIsBilling}}
-          <div class="form-group">
-            <label for="order-billing-address1">Address 1</label>
-            {{input type="text" id="order-billing-address1" class="form-control" value=order.billingAddress2 disabled=order.shippingIsBilling}}
-          </div>
-
-          <div class="form-group">
-            <label for="order-billing-address2">Address 2</label>
-            {{input type="text" id="order-billing-address2" class="form-control" value=order.billingAddress2 disabled=order.shippingIsBilling}}
-          </div>
-
-          <div class="form-group">
-            <label for="order-billing-state">State</label>
-            {{input type="text" id="order-billing-state" class="form-control" value=order.billingState disabled=order.shippingIsBilling}}
-          </div>
-
-          <div class="form-group">
-            <label for="order-billing-city">City</label>
-            {{input type="text" id="order-billing-city" class="form-control" value=order.billingCity disabled=order.shippingIsBilling}}
-          </div>
-
-          <div class="form-group">
-            <label for="order-billing-postal-code">Zip</label>
-            {{input type="text" id="order-billing-postal-code" class="form-control" value=order.billingPostalCode disabled=order.shippingIsBilling}}
-          </div>
-        {{/unless}}
-      </fieldset>
-
-      <fieldset>
-        <legend>Payment</legend>
-        <div class="form-group">
-          <label for="order-payment-credit-card-number">Credit Card Number</label>
-          {{input type="text" id="order-payment-credit-card-number" class="form-control" value=order.paymentCreditCardNumber placeholder="Card Number"}}
+        <div class="form-field">
+          <label for="order-billing-address2">Address 2</label>
+          {{input type="text" id="order-billing-address2" value=order.billingAddress2 disabled=order.shippingIsBilling}}
         </div>
 
-        <div class="form-group">
-          <label for="order-payment-credit-card-expiration">Credit Card Expiration</label>
-          {{input type="text" id="order-payment-credit-card-expiration" class="form-control" value=order.paymentCreditCardExpiration placeholder="Expiration date"}}
+        <div class="form-field">
+          <label for="order-billing-state">State</label>
+          {{input type="text" id="order-billing-state" value=order.billingState disabled=order.shippingIsBilling}}
         </div>
 
-        <div class="form-group">
-          <label for="order-payment-credit-card-name">Name on Credit Card</label>
-          {{input type="text" id="order-payment-credit-card-name" class="form-control" value=order.paymentCreditCardName}}
+        <div class="form-field">
+          <label for="order-billing-city">City</label>
+          {{input type="text" id="order-billing-city" value=order.billingCity disabled=order.shippingIsBilling}}
         </div>
 
-        <div class="form-group">
-          <label for="order-payment-credit-card-cvv">CVV</label>
-          {{input type="text" id="order-payment-credit-card-cvv" class="form-control" value=order.paymentCreditCardCvv}}
+        <div class="form-field">
+          <label for="order-billing-postal-code">Zip</label>
+          {{input type="text" id="order-billing-postal-code" value=order.billingPostalCode disabled=order.shippingIsBilling}}
         </div>
-      </fieldset>
+      {{/unless}}
+    </div>
 
-      <div class="form-group">
-        {{#link-to "admin.order" class="btn btn-default"}}Cancel{{/link-to}}
-        <button class="btn btn-primary">Save</button>
+    <div class="form-group" role="group">
+      <div class="form-group-header">
+        <h3>Payment</h3>
+      </div>
+      <div class="form-field">
+        <label for="order-payment-credit-card-number">Credit Card Number</label>
+        {{input type="text" id="order-payment-credit-card-number" value=order.paymentCreditCardNumber placeholder="Card Number"}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-payment-credit-card-expiration">Credit Card Expiration</label>
+        {{input type="text" id="order-payment-credit-card-expiration" value=order.paymentCardExpiration placeholder="Expiration date"}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-payment-credit-card-name">Name on Credit Card</label>
+        {{input type="text" id="order-payment-credit-card-name" value=order.CreditCardName}}
+      </div>
+
+      <div class="form-field">
+        <label for="order-payment-credit-card-cvv">CVV</label>
+        {{input type="text" id="order-payment-credit-card-cvv" value=order.CreditCardCvv}}
       </div>
     </div>
-  </div>
-{{/simple-form}}
 
-{{outlet}}
+    <div class="form-submits">
+      {{#link-to "admin.order.index" class="button-secondary"}}Cancel{{/link-to}}
+      <button class="button-primary" type="submit">Save</button>
+    </div>
+  {{/simple-form}}
+
+  {{outlet}}
+</div>

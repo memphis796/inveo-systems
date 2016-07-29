@@ -1,31 +1,30 @@
-<nav class="navbar navbar-default">
-
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed sr-only" data-toggle="collapse" data-target="#bs-admin-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {{#link-to "home" class="navbar-brand"}}Inveo Systems{{/link-to}}
-  </div>
-</nav>
-
-<div class="container-fluid">
-  <div class="page-header">
-    <h1>Admin <small>Welcome, {{currentUser.model.email}}!</small></h1>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 col-lg-2">
-      <ul class="nav nav-pills nav-stacked nav-list">
-        {{#link-to "admin.index" tagName="li" href=false class="nav-list"}}{{#link-to "admin.index" class="nav-list"}}Dashboard{{/link-to}}{{/link-to}}
-        {{#link-to "admin.laptop" tagName="li" href=false class="nav-list"}}{{#link-to "admin.laptop" class="nav-list"}}Laptops{{/link-to}}{{/link-to}}
-        {{#link-to "admin.order" tagName="li" href=false class="nav-list"}}{{#link-to "admin.order" class="nav-list"}}Orders{{/link-to}}{{/link-to}}
+<div class="admin-dashboard">
+  <div class="admin-header">
+    <nav class="admin-navbar">
+      <ul>
+        <li>
+          <span class="navbar-text"><i class="fa fa-user fa-fw"></i> {{currentUser.model.email}}</span>
+        </li>
       </ul>
-    </div>
+    </nav>
+    <ul class="admin-navmenu">
+      {{#link-to "home" tagName="li" href=false}}
+        {{#link-to "home" class="external-link"}}<i class="fa fa-home fa-fw"></i> Back to Website{{/link-to}}
+      {{/link-to }}
+      {{#link-to "admin.index" tagName="li" href=false}}
+        {{#link-to "admin.index"}}<i class="fa fa-dashboard fa-fw"></i> Dashboard{{/link-to}}
+      {{/link-to}}
+      {{#link-to "admin.laptop" tagName="li" href=false}}
+        {{#link-to "admin.laptop"}}<i class="fa fa-list fa-fw"></i> Laptops{{/link-to}}
+      {{/link-to}}
+      {{#link-to "admin.order" tagName="li" href=false}}
+        {{#link-to "admin.order"}}<i class="fa fa-list fa-fw"></i> Orders{{/link-to}}
+      {{/link-to}}
+    </ul>
+  </div>
 
-    <div class="col-md-8 col-lg-10d admin-dashboard">
+  <div class="admin-main">
+    <div class="admin-content">
       {{outlet}}
     </div>
   </div>

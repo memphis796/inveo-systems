@@ -1,11 +1,10 @@
+// # Variables
 
-// Login Form styles
 $brand-base-color: #0b0c0d;
 $brand-background-color: #346fa5;
 $brand-login-button: #5d5d69;
 $brand-text: #fff;
 $brand-button-background: #197bd3;
-
 
 $brand-title: #38393c;
 $brand-nav-section: #f00;
@@ -17,3 +16,11 @@ $brand-color-bg: #0079bf;
 $brand-admin-background: #f5f3b3;
 $brand-register-btn: #f0f8ff;
 $brand-support-color: #ff0;
+
+$colors: (
+  brand-primary: #d20000,
+  light-text: #efefef,
+  dark-text: #353535,
+  light-highlight-text: #ff0,
+  white: #fff
+);

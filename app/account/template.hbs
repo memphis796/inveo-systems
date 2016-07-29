@@ -1,0 +1,25 @@
+<div class="account-dashboard">
+  <div class="account-header">
+    <nav class="account-navbar">
+      <ul>
+        <li>
+          <span class="navbar-text"><i class="fa fa-user fa-fw"></i> {{currentUser.model.email}}</span>
+        </li>
+      </ul>
+    </nav>
+    <ul class="account-navmenu">
+      {{#link-to "home" tagName="li" href=false}}
+        {{#link-to "home" class="external-link"}}<i class="fa fa-home fa-fw"></i> Back to Website{{/link-to}}
+      {{/link-to }}
+      {{#link-to "account.order" tagName="li" href=false}}
+        {{#link-to "account.order"}}<i class="fa fa-list fa-fw"></i> Orders{{/link-to}}
+      {{/link-to}}
+    </ul>
+  </div>
+
+  <div class="account-main">
+    <div class="account-content">
+      {{outlet}}
+    </div>
+  </div>
+</div>

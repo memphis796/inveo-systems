@@ -1,0 +1,101 @@
+@import './utils/unit';
+
+// # Grid
+
+// Grid breakpoints. Adjust as needed.
+$grid-breakpoints: (
+  phone-min: rem-calc(0px),
+  phone-max: rem-calc(319px),
+  tablet-min: rem-calc(320px),
+  tablet-max: rem-calc(639px),
+  desktop-min: rem-calc(640px),
+  desktop-max: rem-calc(1024px),
+  extra-desktop-min: rem-calc(1025px)
+);
+
+$grid-names: (
+  column: 'col',
+  phone: 'p',
+  tablet: 't',
+  desktop: 'd',
+  extra-desktop: 'xd'
+);
+
+// Width of row gutters on all sides.
+$row-gutter-width: rem-calc(5px);
+
+// Maximum number of columns.
+$max-columns: 12;
+
+// Width of each column.
+$column-width: 100% / $max-columns;
+
+// Width of column gutters on all sides.
+$column-gutter-width: rem-calc(5px);
+
+// Name for columns.
+$column-name: 'col';
+
+// Set up a flexbox-based grid system.
+// NOTE: All columns of a row must be a direct child of the row. Columns
+// here refer to the ".p-col-1" variety of columns, not ".column".
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  padding: $row-gutter-width;
+}
+
+@media all and (min-width: map-get($grid-breakpoints, phone-min)) and (max-width: map-get($grid-breakpoints, phone-max)) {
+  // Styles specific to phone.
+  @for $i from 1 through $max-columns {
+    .#{map-get($grid-names, phone)}-#{map-get($grid-names, column)}-#{$i} {
+      width: $column-width * $i;
+      padding: $column-gutter-width;
+    }
+  }
+}
+
+@media all and (min-width: map-get($grid-breakpoints, tablet-min)) and (max-width: map-get($grid-breakpoints, tablet-max)) {
+  // Styles specific to tablet.
+  @for $i from 1 through $max-columns {
+    .#{map-get($grid-names, tablet)}-#{map-get($grid-names, column)}-#{$i} {
+      width: $column-width * $i;
+      padding: $column-gutter-width;
+    }
+  }
+}
+
+@media all and (min-width: map-get($grid-breakpoints, desktop-min)) and (max-width: map-get($grid-breakpoints, desktop-max)) {
+  // Styles specific to desktop.
+  @for $i from 1 through $max-columns {
+    .#{map-get($grid-names, desktop)}-#{map-get($grid-names, column)}-#{$i} {
+      width: $column-width * $i;
+      padding: $column-gutter-width;
+    }
+  }
+}
+
+@media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+  // Styles specific to beyond desktop.
+  @for $i from 1 through $max-columns {
+    .#{map-get($grid-names, extra-desktop)}-#{map-get($grid-names, column)}-#{$i} {
+      width: $column-width * $i;
+      padding: $column-gutter-width;
+    }
+  }
+}
+
+// Responsive images by default.
+img {
+  width: 100%;
+}
+
+// Image helpers.
+@each $full-name, $short-name in $grid-names {
+  .#{$short-name}-min-img-size {
+    max-width: map-get($grid-breakpoints, '#{$full-name}-min');
+  }
+  .#{$short-name}-max-img-size {
+    max-width: map-get($grid-breakpoints, '#{$full-name}-max');
+  }
+}

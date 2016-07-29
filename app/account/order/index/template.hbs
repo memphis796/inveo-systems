@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Orders Index</h1>
+  <h1>Your Orders</h1>
 </div>
 
 <div class="page-body order-datalist datalist-table">
@@ -36,13 +36,8 @@
         <div class="datalist-field datalist-field-actions">
           <div class="datalist-label">Actions</div>
           <ul class="datalist-value">
-            {{#link-to "admin.order.edit" tagName="li" href=false}}
-              {{#link-to "admin.order.edit" order.id}}<i class="fa fa-pencil fa-fw"></i> Edit{{/link-to}}
-            {{/link-to}}
-            {{#link-to "admin.order.edit" tagName="li" href=false}}
-              <button class="dangerous" {{action "destroyRecord" order}}>
-                <i class="fa fa-trash fa-fw"></i> Delete
-              </button>
+            {{#link-to "account.order.view" tagName="li" href=false}}
+              {{#link-to "account.order.view" order.id}}<i class="fa fa-eye fa-fw"></i> View{{/link-to}}
             {{/link-to}}
           </ul>
         </div>

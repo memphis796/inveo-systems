@@ -1,0 +1,883 @@
+@import 'utils/unit';
+@import 'grid';
+
+html {
+  /// Apply company background image.
+  background: url('/bg-2.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.nav-container {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: #efefef;
+  }
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    flex: 0 1 rem-calc(72px);
+    display: flex;
+    flex-flow: row wrap;
+    h1, h2, h3, h4, h5, h6 {
+      flex: 0 1 rem-calc(312px);
+    }
+    nav {
+      flex: 1;
+    }
+  }
+}
+
+.admin-nav-container {
+  padding: rem-calc(0);
+  border: rem-calc(0) solid transparent;
+  background-color: map-get($colors, brand-primary);
+}
+
+.nav {
+  li {
+    text-align: center;
+  }
+  a, .nav-text {
+    display: block;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    text-decoration: none;
+  }
+  .nav-text {
+    color: #efefef;
+  }
+  a {
+    color: #888888;
+    &:focus, &:hover {
+      color: #bbbbbb;
+    }
+    &:active, &.active {
+      color: #ffffff;
+    }
+  }
+  // Styles specific to desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    display: flex;
+    flex-flow: row wrap;
+    ul {
+      flex: 1 auto;
+      display: flex;
+      flex-flow: row wrap;
+      &:first-child {
+        align-self: flex-start;
+        justify-content: flex-start;
+      }
+      &:last-child {
+        align-self: flex-end;
+        justify-content: flex-end;
+      }
+    }
+    li {
+      flex: 0 0;
+    }
+    a, .nav-text {
+      white-space: nowrap;
+    }
+  }
+}
+
+.admin-nav {
+  a {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    &:focus, &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #ffffff;
+    }
+    &:active, &.active {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+    }
+  }
+}
+
+.callouts {
+  margin-bottom: rem-calc(24px);
+  text-align: center;
+  // Styles specific to desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    display: flex;
+    flex-flow: row wrap;
+    .callout {
+      flex: 1;
+      &:first-child {
+        flex: 1 1 100%;
+      }
+    }
+    .callout-body {
+      flex: 1 1 auto;
+    }
+  }
+  // Styles specific to extra-desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    .callout {
+      &:first-child {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.callout {
+  display: flex;
+  flex-flow: column;
+  background-color: map-get($colors, brand-primary);
+  color: map-get($colors, dark-text);
+  .callout-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: rem-calc(96px);
+    color: map-get($colors, light-text);
+  }
+  .callout-body {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .callout-image-container {
+    background-color: map-get($colors, white);
+    text-align: center;
+  }
+}
+
+.products-container {
+  background-color: #f3f3f3;
+  .products-header {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    text-align: center;
+  }
+  ul {
+  }
+  li {
+    text-align: center;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+  }
+  .product-title {
+    min-height: rem-calc(96px);
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: #ffffff;
+  }
+  .product-body {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: #ffffff;
+  }
+  // Styles specific to tablet or above.
+  @media all and (min-width: map-get($grid-breakpoints, tablet-min)) {
+  }
+  // Styles specific to desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    li {
+      flex: 1 0 50%;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+    }
+    .product-title {
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-body {
+      flex: 0 1 auto;
+    }
+  }
+  // Styles specific to extra-desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    li {
+      flex: 1 0 25%;
+    }
+  }
+}
+
+.home-route {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  .page-nav {
+
+  }
+  .page-header {
+    margin-top: rem-calc(24px);
+    text-align: center;
+  }
+  .page-body {
+    background-color: #ffffff;
+  }
+  .page-footer {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    text-align: right;
+    background-color: #ffffff;
+  }
+  .credit {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+  }
+}
+
+.banner {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin-bottom: rem-calc(24px);
+  h1, h2, h3, h4, h5, h6 {
+    color: map-get($colors, brand-primary);
+  }
+  img {
+    margin: auto;
+    margin-bottom: rem-calc(24px);
+  }
+  button {
+    width: rem-calc(288px);
+    align-self: center;
+  }
+}
+
+.index-route {
+  min-height: 100vh;
+  .page-header {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    h1 {
+      flex: 0 0 100%;
+      color: #efefef;
+      text-align: center;
+    }
+    nav {
+      flex: 0 0 100%;
+    }
+  }
+  form {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: map-get($colors, light-text);
+  }
+  .form-header-external {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: map-get($colors, brand-primary);
+    color: map-get($colors, light-text);
+    font-weight: bold;
+    text-align: center;
+  }
+  // Styles specific to desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    .page-body {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .form-container {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+    .form-header-external {
+      align-self: flex-start;
+      margin-left: rem-calc(24px);
+      text-align: left;
+    }
+  }
+}
+
+.order-route {
+  background-color: #ffffff;
+  .page-header {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+  }
+}
+
+.page-header {
+  margin-bottom: rem-calc(24px);
+}
+
+p {
+  margin-bottom: rem-calc(24px);
+}
+
+input, textarea, select {
+  border: rem-calc(1px) solid #000000;
+  padding: rem-calc(2px);
+}
+
+.admin-dashboard, .account-dashboard {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+.admin-header, .account-header {
+  position: relative;
+  z-index: 1;
+  flex: 1 100%;
+  box-shadow: rem-calc(3px) 0 rem-calc(3px) 0 rgba(0, 0, 0, 0.4);
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    // Styles specific to desktop.
+    flex: 1 40%;
+  }
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    // Styles specific to extra-desktop.
+    flex: 1 25%;
+  }
+}
+.admin-main, .account-main {
+  flex: 1 100%;
+  display: flex;
+  flex-direction: column;
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    // Styles specific to desktop.
+    flex: 1 60%;
+  }
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    // Styles specific to extra-desktop.
+    flex: 1 75%;
+  }
+}
+
+.admin-content, .account-content {
+  display: flex;
+  flex-direction: column;
+  .page-header {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    border-bottom-color: #eeeeee;
+    margin-bottom: 0;
+    background-color: #00baff;
+    color: #ffffff;
+  }
+  .page-body {
+    @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+      padding: rem-calc(11px);
+      border: rem-calc(1px) solid transparent;
+    }
+  }
+}
+
+.admin-navbar, .account-navbar {
+  background-color: #1d1d1d;
+  color: #efefef;
+  li {
+    width: 100%;
+  }
+  a,
+  .navbar-text {
+    display: block;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    border-bottom-color: #000000;
+  }
+  a {
+    color: #888888;
+    text-decoration: none;
+    &:focus, &:hover {
+      color: #bbbbbb;
+    }
+    &:active, &.active {
+      color: #ffffff;
+    }
+  }
+  .navbar-text {
+    color: #cada65;
+  }
+}
+
+.admin-navmenu, .account-navmenu {
+  a {
+    display: flex;
+    text-decoration: none;
+    color: #007fb5;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    border-bottom-color: #eeeeee;
+    &:focus, &:hover {
+      color: #0198d9;
+    }
+    &:active, &.active {
+      color: #00b3ff;
+    }
+    i {
+      margin-top: auto;
+      margin-right: rem-calc(3px);
+      margin-bottom: auto;
+    }
+    &:after {
+      font-family: 'FontAwesome';
+      content: '\f053';
+      margin-left: auto;
+    }
+    &.external-link {
+      background-color: #fffba3;
+      &:after {
+        content: '\f14c';
+      }
+    }
+  }
+}
+
+.admin-content-navmenu, .account-content-navmenu {
+  display: flex;
+  flex-flow: row wrap;
+  border: rem-calc(1px) solid transparent;
+  border-bottom-color: #eeeeee;
+  li {
+    flex: 0 1 100%;
+    @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+      // Styles specific to extra-desktop.
+      flex: 0 1 auto;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: #007fb5;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    border-bottom-color: #cccccc;
+    margin-bottom: rem-calc(-1px);
+    &:focus, &:hover {
+      color: #0198d9;
+      padding-bottom: rem-calc(9px);
+      border-bottom-width: rem-calc(3px);
+    }
+    &:active, &.active {
+      color: #00b3ff;
+      padding-bottom: rem-calc(9px);
+      border-bottom-width: rem-calc(3px);
+      border-bottom-color: #00baff;
+    }
+  }
+}
+
+.admin-content-main, .account-content-main {
+  display: flex;
+  flex-direction: column;
+  border: rem-calc(1px) solid #e0f7ff;
+}
+
+.datalist {}
+.datalist-main {
+  display: flex;
+  flex-flow: column;
+}
+.datalist-item {
+  display: flex;
+  flex-flow: row wrap;
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  border-bottom-color: #eeeeee;
+}
+.datalist-field {
+  flex: 0 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+.datalist-table {
+  .datalist-header {
+    display: none;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+  }
+  .datalist-field {
+    @media all and (min-width: map-get($grid-breakpoints, tablet-min)) {
+      // Styles specific to tablet.
+      flex: 1 1 100%;
+    }
+    @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+      // Styles specific to desktop.
+      flex: 1 1 33%;
+    }
+    @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+      // Styles specific to extra-desktop.
+      flex: 1 1;
+    }
+  }
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    // Styles specific to extra-desktop.
+    .datalist-header {
+      display: flex;
+      flex-flow: row wrap;
+      .datalist-label {
+        flex: 1 1;
+      }
+    }
+    .datalist-label {
+      font-size: rem-calc(12px);
+      line-height: rem-calc(24px);
+    }
+    .datalist-field-actions {
+      li {
+        flex: 0 1 100%;
+      }
+    }
+  }
+}
+.datalist-main {
+  .datalist-label {
+    flex: 0 1 100%;
+  }
+}
+.datalist-label {
+  font-weight: bold;
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  background-color: #efefef;
+}
+.datalist-value {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+}
+ul.datalist-value {
+  flex: 0 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+}
+.datalist-field-actions {
+  li {
+    flex: 0 1 100%;
+    @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+      flex: 1 1;
+    }
+  }
+  a, button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    color: #007fb5;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    border-bottom-color: #cccccc;
+    margin-bottom: rem-calc(-1px);
+    background-color: transparent;
+    //font-size: rem-calc(12px);
+    //line-height: rem-calc(24px);
+    &:focus, &:hover {
+      color: #0198d9;
+      padding-bottom: rem-calc(9px);
+      border-bottom-width: rem-calc(3px);
+    }
+    &:active, &.active {
+      color: #00b3ff;
+      padding-bottom: rem-calc(9px);
+      border-bottom-width: rem-calc(3px);
+      border-bottom-color: #00baff;
+    }
+    &.dangerous {
+      color: #b50000;
+      &:focus, &:hover {
+        color: #d90101;
+        padding-bottom: rem-calc(9px);
+        border-bottom-width: rem-calc(3px);
+      }
+      &:active, &.active {
+        color: #ff0000;
+        padding-bottom: rem-calc(9px);
+        border-bottom-width: rem-calc(3px);
+        border-bottom-color: #ff0000;
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  background-color: #efefef;
+}
+
+.form-text {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+}
+
+form:not(.form-stacked) {
+  @media all and (min-width: map-get($grid-breakpoints, extra-desktop-min)) {
+    // Styles specific to extra-desktop and above.
+    .form-group {
+      &:before {
+        flex: 0 1 rem-calc(288px);
+        content: ' ';
+        padding: rem-calc(11px);
+        border: rem-calc(1px) solid transparent;
+        margin-right: rem-calc(12px);
+      }
+    }
+    .form-field {
+      label {
+        flex: 0 1 rem-calc(288px);
+        text-align: right;
+        margin-left: 0;
+        margin-right: rem-calc(12px);
+      }
+      input:not([type="checkbox"]), textarea, select, .form-control {
+        flex: 1 1;
+      }
+      .form-help {
+        &:before {
+          flex: 0 1 rem-calc(288px);
+          content: ' ';
+          padding: rem-calc(11px);
+          margin-right: rem-calc(12px);
+        }
+      }
+      &.required {
+        label {
+          &:before {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+    .form-submits {
+      &:before {
+        flex: 0 1 rem-calc(288px);
+        content: ' ';
+        padding: rem-calc(11px);
+        margin-right: rem-calc(12px);
+      }
+    }
+  }
+}
+
+.form-group {
+  // Flexbox cannot be used on fieldset (and legend, apparently).
+  // Instead using .form-group.
+  flex: 1 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: rem-calc(24px);
+}
+.form-group-header {
+  flex: 1 1;
+  display: block;
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  border-bottom-color: #eeeeee;
+  margin-left: rem-calc(12px);
+  margin-right: rem-calc(12px);
+  margin-bottom: 0;
+  background-color: #006488;
+  color: #ffffff;
+}
+.form-field {
+  flex: 0 1 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  label {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    margin-left: rem-calc(-12px);
+    font-weight: bold;
+  }
+  input:not([type="checkbox"]), textarea, select, .form-control {
+    width: 100%;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+  }
+  input:not([type="checkbox"]), textarea, select {
+    border-color: #cccccc;
+  }
+  input[type="checkbox"] {
+    transform: scale(2);
+    margin-top: rem-calc(6px);
+    margin-left: rem-calc(6px);
+    margin-bottom: rem-calc(5px);
+  }
+  textarea {
+    min-height: rem-calc(72px);
+  }
+  .form-help {
+    flex: 1 1 100%;
+    display: flex;
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    .form-help-text {
+      color: #777777;
+    }
+  }
+  &.required {
+    label {
+      position: relative;
+      z-index: 1;
+      &:before {
+        position: absolute;
+        top: rem-calc(11px);
+        left: 0;
+        content: '*';
+        color: #b50000;
+      }
+    }
+  }
+}
+
+.form-submits {
+  display: flex;
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  margin-top: rem-calc(24px);
+  a, button {
+    flex: 1 1;
+  }
+}
+
+.button-primary,
+.button-secondary,
+a.button-primary,
+a.button-secondary {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  height: rem-calc(48px);
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+}
+
+.button-primary,
+a.button-primary {
+  background-color: #35ac72;
+  color: #ffffff;
+  &:focus, &:hover {
+    background-color: mix(#000000, #35ac72, 15%);
+  }
+  &:active, &.active {
+    background-color: mix(#000000, #35ac72, 30%);
+  }
+}
+
+.button-secondary,
+a.button-secondary {
+  background-color: #888888;
+  color: #ffffff;
+  &:focus, &:hover {
+    background-color: mix(#000000, #888888, 15%);
+  }
+  &:active, &.active {
+    background-color: mix(#000000, #888888, 30%);
+  }
+}
+
+.form-header {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+  border-bottom-color: #eeeeee;
+  margin-bottom: 0;
+  background-color: #006488;
+  color: #ffffff;
+}
+
+.review {
+  text-align: center;
+  color: map-get($colors, light-text);
+  &:nth-child(odd) {
+    background-color: #1d1d1d;
+  }
+  &:nth-child(even) {
+    background-color: map-get($colors, brand-primary);
+  }
+  // Styles specific to desktop or above.
+  @media all and (min-width: map-get($grid-breakpoints, desktop-min)) {
+    display: flex;
+    flex-flow: row no-wrap;
+    .review-body {
+    }
+    .review-image-container {
+      max-width: none;
+    }
+    &:nth-child(odd) {
+      .review-body {
+        order: 2;
+        text-align: left;
+      }
+      .review-image-container {
+        order: 1;
+      }
+    }
+    &:nth-child(even) {
+      .review-body {
+        order: 1;
+        text-align: right;
+      }
+      .review-image-container {
+        order: 2;
+      }
+    }
+  }
+}
+.review-body {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+}
+.review-image-container {
+  padding: rem-calc(11px);
+  border: rem-calc(1px) solid transparent;
+}
+
+.support {
+  text-align: center;
+  .support-body {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: #1d1d1d;
+    color: map-get($colors, light-highlight-text);
+  }
+  .support-contact {
+    padding: rem-calc(11px);
+    border: rem-calc(1px) solid transparent;
+    background-color: map-get($colors, light-highlight-text);
+    color: #1d1d1d;
+    li {
+      margin-bottom: rem-calc(24px);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .support-contact-label {
+      font-weight: bold;
+    }
+  }
+}
+
+a {
+  text-decoration :none;
+  color: #007fb5;
+  &:focus, &:hover {
+    color: #0198d9;
+  }
+  &:active, &.active {
+    color: #00b3ff;
+  }
+}

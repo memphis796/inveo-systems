@@ -1,0 +1,85 @@
+@import 'utils/unit';
+
+* {
+  // Eliminate unexpected paddings.
+  padding: 0;
+
+  // Eliminate unexpected borders.
+  border: 0;
+
+  // Eliminate unexpected margins.
+  margin: 0;
+}
+
+html {
+  // Normalize the font family.
+  font-family: verdana;
+
+  // Normalize the font size.
+  font-size: 12pt; // 16px
+
+  // Normalize the line-height.
+  line-height: 1.5; // 24px
+
+  // Normalize color.
+  color: #353535;
+
+  // Normalize the box-sizing so paddings and borders mesh with dimensions.
+  // This makes it easier to be responsive since a miscalculation here causes
+  // layout to unexpectedly break or stagger.
+  box-sizing: border-box;
+}
+
+* {
+  // Allow components to change box-sizing.
+  box-sizing: inherit;
+
+  // Eliminate unexpected paddings.
+  padding: 0;
+
+  // Eliminate unexpected borders.
+  border: 0;
+
+  // Eliminate unexpected margins.
+  margin: 0;
+
+  &:before,
+  &:after {
+    // Allow components to change box-sizing.
+    box-sizing: inherit;
+  }
+}
+
+ul {
+  // Remove bullets from all lists. This makes bullets an opt-in affair, which
+  // makes for cleaner and expected lists.
+  list-style: none;
+}
+button, input, textarea, select {
+  // Normalize the font family.
+  font-family: inherit;
+
+  // Normalize the font size.
+  font-size: inherit;
+
+  // Normalize the line-height.
+  line-height: inherit;
+}
+
+button {
+  // Use a better cursor for all buttons.
+  cursor: pointer;
+}
+
+input, textarea, select  {
+  // Normalize look of form controls.
+  box-shadow: inset rem-calc(1px) rem-calc(1px) rem-calc(1px) 0 rgba(0, 0, 0, 0.4);
+  &[readonly] {
+    // Normalize readonly look of form controls.
+    background-color: #dddddd;
+    color: #6a6a6a;
+
+    // Normalize readonly cursor of form controls.
+    cursor: not-allowed;
+  }
+}

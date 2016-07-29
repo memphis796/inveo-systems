@@ -1,10 +1,10 @@
 <div class="page-header">
-    <h1>Dashboard</h1>
-  </div>
+  <h1>Admin Dashboard</h1>
+</div>
 
-  <div class="page-body">
-    <p>Welcome to the Administration dashboard. Here you can add new products to your online market place, modify existing ones, or review orders.</p>
-    <p>Click one of the navigation items to get started!</p>
+<div class="page-body">
+  <p>Welcome to the Administration dashboard, {{currentUser.model.email}}! Here you can add new products to your online market place, modify existing ones, or review orders.</p>
+  <p>Click one of the navigation items to get started!</p>
 
-    {{outlet}}
+  {{outlet}}
 </div>

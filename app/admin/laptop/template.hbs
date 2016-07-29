@@ -1,5 +1,14 @@
-<ul class="nav nav-tabs">
-  {{#link-to "admin.laptop.new" tagName="li" href=false class="nav-list"}}{{#link-to "admin.laptop.new" class="nav-list"}}Create Laptop{{/link-to}}{{/link-to}}
-</ul>
+<div class="admin-content-header">
+  <ul class="admin-content-navmenu">
+    {{#link-to "admin.laptop.index" tagName="li" href=false}}
+      {{#link-to "admin.laptop.index"}}Laptops Index{{/link-to}}
+    {{/link-to}}
+    {{#link-to "admin.laptop.new" tagName="li" href=false}}
+      {{#link-to "admin.laptop.new"}}Add Laptop{{/link-to}}
+    {{/link-to}}
+  </ul>
+</div>
 
-{{outlet}}
+<div class="admin-content-main">
+  {{outlet}}
+</div>

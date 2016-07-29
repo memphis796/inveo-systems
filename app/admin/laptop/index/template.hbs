@@ -1,43 +1,54 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title">Laptops Index</h2>
-  </div>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Color</th>
-          <th>Screen Size</th>
-          <th>Price</th>
-          <th>Image</th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {{#each model as |laptop|}}
-          <tr>
-            <td>{{laptop.id}}</td>
-            <td>{{laptop.name}}</td>
-            <td>{{laptop.color}}</td>
-            <td>{{laptop.screenSize}}"</td>
-            <td>${{laptop.price}}</td>
-            <td>{{laptop.image}}</td>
-            <td>
-              {{#link-to "admin.laptop.edit" laptop.id class="btn btn-info"}}
-                <span class="fa fa-pencil fa-fw"></span>
-              {{/link-to}}
-              <button class="btn btn-danger" {{action "destroyRecord" laptop}}>
-                <span class="fa fa-trash fa-fw"></span>
-              </button>
-            </td>
-          </tr>
-          {{/each}}
-      </tbody>
-    </table>
-  </div>
+<div class="page-header">
+  <h1>Laptops Index</h1>
 </div>
 
-{{outlet}}
+<div class="page-body laptop-datalist">
+  <ul class="datalist-main datalist-table">
+    {{#unless model}}
+      <i>You have no laptops to view!</i>
+    {{/unless}}
+    {{#each model as |laptop|}}
+      <li class="datalist-item">
+        <div class="datalist-field datalist-field-id">
+          <span class="datalist-label">ID</span>
+          <span class="datalist-value">{{laptop.id}}</span>
+        </div>
+        <div class="datalist-field datalist-field-name">
+          <span class="datalist-label">Name</span>
+          <span class="datalist-value">{{laptop.name}}</span>
+        </div>
+        <div class="datalist-field datalist-field-color">
+          <span class="datalist-label">Color</span>
+          <span class="datalist-value">{{laptop.color}}</span>
+        </div>
+        <div class="datalist-field datalist-field-screen-size">
+          <span class="datalist-label">Screen Size</span>
+          <span class="datalist-value">{{laptop.screenSize}}</span>
+        </div>
+        <div class="datalist-field datalist-field-price">
+          <span class="datalist-label">Price</span>
+          <span class="datalist-value">{{laptop.price}}</span>
+        </div>
+        <div class="datalist-field datalist-field-image">
+          <span class="datalist-label">Image</span>
+          <span class="datalist-value">{{laptop.image}}</span>
+        </div>
+        <div class="datalist-field datalist-field-actions">
+          <div class="datalist-label">Actions</div>
+          <ul class="datalist-value">
+            {{#link-to "admin.laptop.edit" tagName="li" href=false}}
+              {{#link-to "admin.laptop.edit" laptop.id}}<i class="fa fa-pencil fa-fw"></i> Edit{{/link-to}}
+            {{/link-to}}
+            {{#link-to "admin.laptop.edit" tagName="li" href=false}}
+              <button class="dangerous" {{action "destroyRecord" laptop}}>
+                <i class="fa fa-trash fa-fw"></i> Delete
+              </button>
+            {{/link-to}}
+          </ul>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+
+  {{outlet}}
+</div>

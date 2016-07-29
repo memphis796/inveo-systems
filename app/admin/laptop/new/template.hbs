@@ -1,47 +1,47 @@
+<div class="page-header">
+  <h1>Add Laptop</h1>
+</div>
 
-{{#simple-form onsubmit=(action saveLaptop) as |laptop|}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">Creating Laptop #{{ laptop.id }}</h2>
+<div class="page-body">
+  {{#simple-form onsubmit=(action saveLaptop) as |laptop|}}
+    <div class="form-header">
+      <h2>New Laptop</h2>
+    </div>
+    <div class="form-field required">
+      <label for="laptop-name"><span class="laptop-name">Laptop Name</span></label>
+      {{input type="text" id="laptop-name" class="form-control" value=laptop.name}}
     </div>
 
-    <div class="panel-body">
-      <div class="form-group">
-        <label for="laptop-name"><span class="laptop-name">Laptop Name</span></label>
-        {{input type="text" id="laptop-name" class="form-control" value=laptop.name}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-name"><span class="laptop-color">Laptop Color</span></label>
-        {{input type="text" id="laptop-color" class="form-control" value=laptop.color}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-description"><span class="laptop-desc">Laptop Description</span></label>
-        {{textarea id="laptop-description" class="form-control" value=laptop.description}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-screen-size"><span class="laptop-screen">Laptop Screen Size</span></label>
-        {{input type="text" id="laptop-screen-size" class="form-control" value=laptop.screenSize}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-price"><span class="laptop-price">Laptop Price</span></label>
-        {{input type="text" id="laptop-price" class="form-control" value=laptop.price}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-image"><span class="laptop-image">Laptop Image</span></label>
-        {{input type="text" id="laptop-image" class="form-control" value=laptop.image}}
-      </div>
-
-      <div class="form-group">
-        {{#link-to "admin.laptop" class="btn btn-default nav-list"}}Cancel{{/link-to}}
-        <button class="btn btn-primary">Create</button>
-      </div>
+    <div class="form-field required">
+      <label for="laptop-color"><span class="laptop-color">Laptop Color</span></label>
+      {{input type="text" id="laptop-color" class="form-control" value=laptop.color}}
     </div>
-  </div>
-{{/simple-form}}
 
-{{outlet}}
+    <div class="form-field required">
+      <label for="laptop-description"><span class="laptop-desc">Laptop Description</span></label>
+      {{textarea id="laptop-description" class="form-control" value=laptop.description}}
+    </div>
+
+    <div class="form-field required">
+      <label for="laptop-screen-size"><span class="laptop-screen">Laptop Screen Size</span></label>
+      {{input type="text" id="laptop-screen-size" class="form-control" value=laptop.screenSize}}
+    </div>
+
+    <div class="form-field required">
+      <label for="laptop-price"><span class="laptop-price">Laptop Price</span></label>
+      {{input type="text" id="laptop-price" class="form-control" value=laptop.price}}
+    </div>
+
+    <div class="form-field required">
+      <label for="laptop-image"><span class="laptop-image">Laptop Image</span></label>
+      {{input type="text" id="laptop-image" class="form-control" value=laptop.image}}
+    </div>
+
+    <div class="form-submits">
+      {{#link-to "admin.laptop.index" class="button-secondary"}}Cancel{{/link-to}}
+      <button type="submit" class="button-primary">Create</button>
+    </div>
+  {{/simple-form}}
+
+  {{outlet}}
+</div>

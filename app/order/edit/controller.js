@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     order.setProperties(formValues);
 
     order.save().then(() => {
-      this.transitionToRoute('order.index');
+      this.transitionToRoute(`order.index`);
     });
   },
 });

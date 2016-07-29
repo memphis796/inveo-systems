@@ -1,15 +1,15 @@
 <div class="home-route">
   <div class="page-nav">
     {{#if (eq currentUser.model.email "admin@inveo.com")}}
-    <div class="nav-container admin-nav-container">
-      <nav class="nav admin-nav">
-        <ul>
-          {{#link-to "admin" tagName="li" href=false}}
-            {{#link-to "admin"}}<i class="fa fa-dashboard fa-fw"></i>ADMIN DASHBOARD{{/link-to}}
-          {{#link-to}}
-        </ul>
-      </nav>
-    </div>
+      <div class="nav-container admin-nav-container">
+        <nav class="nav admin-nav">
+          <ul>
+            {{#link-to "admin" tagName="li" href=false}}
+              {{#link-to "admin"}}<i class="fa fa-dashboard fa-fw"></i> ADMIN DASHBOARD{{/link-to }}
+            {{/link-to }}
+          </ul>
+        </nav>
+      </div>
     {{/if}}
 
     <div class="nav-container">
@@ -19,33 +19,33 @@
             <span class="nav-text">Inveo Systems &#174;</span>
           </li>
           {{#link-to "home.index" tagName="li" href=false}}
-            {{#link-to "home.index"}}HOME{{/link-to}}
-          {{#link-to}}
+            {{#link-to "home.index"}}HOME{{/link-to }}
+          {{/link-to }}
           {{#link-to "home.about" tagName="li" href=false}}
-            {{#link-to "home.about"}}ABOUT US{{/link-to}}
-          {{#link-to}}
+            {{#link-to "home.about"}}ABOUT US{{/link-to }}
+          {{/link-to }}
           {{#link-to "home.reviews" tagName="li" href=false}}
-            {{#link-to "home.reviews"}}REVIEWS{{/link-to}}
-          {{#link-to}}
+            {{#link-to "home.reviews"}}REVIEWS{{/link-to }}
+          {{/link-to }}
           {{#link-to "home.support" tagName="li" href=false}}
-            {{#link-to "home.support"}}SUPPORT{{/link-to}}
-          {{#link-to}}
+            {{#link-to "home.support"}}SUPPORT{{/link-to }}
+          {{/link-to }}
         </ul>
         <ul>
-          {{#if currentUser.model}}
-            {{#link-to "logout" tagName="li" href=false}}
-              {{#link-to "logout"}}LOGOUT{{/link-to}}
-            {{#link-to}}
-            {{#link-to "account" tagName="li" href=false}}
-              {{#link-to "account"}}<i class"fa fa-user fa-fw"></i>{{currentUser.model.email}}{{/link-to}}
-            {{#link-to}}
+          {{#if currentUser.model }}
+            {{#link-to "logout" tagName="li"}}
+              {{#link-to "logout"}}LOGOUT{{/link-to }}
+            {{/link-to }}
+            {{#link-to "account" tagName="li"}}
+              {{#link-to "account"}}<i class="fa fa-user fa-fw"></i> {{currentUser.model.email}}{{/link-to }}
+            {{/link-to }}
           {{else}}
             {{#link-to "index.login" tagName="li" href=false}}
-              {{#link-to "index.login"}}SIGNIN{{/link-to}}
-            {{#link-to}}
+              {{#link-to "index.login"}}SIGNIN{{/link-to }}
+            {{/link-to }}
             {{#link-to "index.register" tagName="li" href=false}}
-              {{#link-to "index.register"}}SIGNUP{{/link-to}}
-            {{#link-to}}
+              {{#link-to "index.register"}}SIGNUP{{/link-to }}
+            {{/link-to }}
           {{/if}}
         </ul>
       </nav>
@@ -57,6 +57,6 @@
   </div>
 
   <footer class="page-footer">
-    <span class="credit">Copyright &#169; 2016 Inveo System. All Rights Reserved</span>
+    <span class="credit">Copyright &#169; 2016 Inveo Systems. All Rights Reserved</span>
   </footer>
 </div>

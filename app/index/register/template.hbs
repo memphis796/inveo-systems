@@ -1,26 +1,26 @@
 <div class="form-container">
-   {{#simple-form  class="form-stacked" onsubmit=(action register) as |formValues|}}
-     <div class="form-text">
-       <p>Already have an account? {{#link-to "index.login"}}Log in{{/link-to}}</p>
-     </div>
-     <div class="form-field">
+  {{#simple-form class="form-stacked" onsubmit=(action register) as |formValues|}}
+    <div class="form-text">
+      <p>Already have an account? {{#link-to "index.login"}}Log in{{/link-to}}</p>
+    </div>
+    <div class="form-field">
       <label>Username:</label>
-      {{input value=formValues.username placeholder="User Name"}}
-     </div>
-     <div class="form-field">
-       <label>Email:</label>
-       {{input value=formValues.email placeholder="Email"}}
-     </div>
-      <div class="form-field">
-        <label>Password:</label>
-       {{input type="password" value=formValues.password placeholder="Password"}}
-     </div>
-     <div class="form-submits">
-        <button class="button-button">Register</button>
-     </div>
+      {{input value=formValues.username placeholder="Your username"}}
+    </div>
+    <div class="form-field">
+      <label>Email:</label>
+      {{input value=formValues.email placeholder="Your email"}}
+    </div>
+    <div class="form-field">
+      <label>Password:</label>
+      {{input type="password" value=formValues.password placeholder='Your password'}}
+    </div>
+    <div class="form-submits">
+      <button class="button-primary">Register</button>
+    </div>
   {{/simple-form}}
 
-   <div class="form-header-external">Private Cloud &#64; Inveo Systems</div>
- </div>
+  <div class="form-header-external">Private Cloud &#64; Inveo Systems</div>
+</div>
 
-  {{outlet}}
+{{outlet}}

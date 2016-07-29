@@ -2,20 +2,20 @@
   {{#simple-form class="form-stacked" onsubmit=(action login) as |formValues|}}
     <div class="form-field">
       <label>Email:</label>
-      {{input class="input-name" value=formValues.email placeholder="Email"}}
+      {{input class="input-name" value=formValues.email placeholder="Your email"}}
     </div>
 
     <div class="form-field">
       <label>Password:</label>
-      {{input class="input-name" type='password' value=formValues.password placeholder="password"}}
+      {{input class="" type='password' value=formValues.password placeholder="Your password"}}
     </div>
 
     <div class="form-submits">
-        <button class="button-primary">Login</button>
+      <button class="button-primary">Login</button>
     </div>
-{{/simple-form}}
+  {{/simple-form}}
 
-  <div class="form-header-external">Private Cloud &#64; labInveno Systems</div>
-     </div>
+  <div class="form-header-external">Private Cloud &#64; Inveo Systems</div>
+</div>
 
 {{outlet}}

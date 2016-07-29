@@ -1,32 +1,53 @@
-<nav class="navbar navbar-default">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed toggle-button" data-toggle="collapse" data-target="#bs-home-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {{#link-to "home" class="navbar-brand"}}Inveo Systems{{/link-to}}
+{{#if (eq currentUser.model.email "admin@inveo.com")}}
+  <div class="navbar-container admin-nav-container">
+    <nav class="nav admin-nav">
+      <ul>
+        {{#link-to "admin" tagName="li" href=false}}
+          {{#link-to "admin"}}<i class="fa fa-dashboard fa-fw"></i>DASHBOARD{{/link-to}}
+        {{/link-to}}
+      </ul>
+    </nav>
   </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse nav-items" id="bs-home-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      {{#link-to "about" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "about" class="nav-lists nav-links"}}ABOUT US{{/link-to }}{{/link-to }}
-      {{#link-to "about" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "reviews" class="nav-lists nav-links"}}REVIEWS{{/link-to }}{{/link-to }}
-      {{#link-to "about" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "support" class="nav-lists nav-links"}}SUPPORT{{/link-to }}{{/link-to }}
+{{/if}}
+
+<div class="nav-container">
+  <nav class="nav">
+    <ul>
+      <li>
+        <span class="nav-text">Inveo Systems &#174;</span>
+      </li>
+      {{#link-to "home" tagName="li" href=false}}
+         {{#link-to "home"}}HOME{{/link-to}}
+      {{/link-to}}
+      {{#link-to "home.about" tagName="li" href=false}}
+         {{#link-to "home.about"}}ABOUT US{{/link-to}}
+      {{/link-to}}
+      {{#link-to "home.reviews" tagName="li" href=false}}
+         {{#link-to "home.reviews"}}REVIEWS{{/link-to}}
+      {{/link-to}}
+      {{#link-to "home.support" tagName="li" href=false}}
+         {{#link-to "home.support"}}SUPPORT{{/link-to}}
+      {{/link-to}}
     </ul>
-    <ul class="nav navbar-nav navbar-right">
+
+    <ul>
       {{#if currentUser.model }}
-        {{#link-to "logout" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "logout" class="nav-lists nav-links"}}LOGOUT{{/link-to }}{{/link-to }}
+        {{#link-to "logout" tagName="li"}}
+          {{#link-to "logout"}}LOGOUT{{/link-to }}
+        {{/link-to }}
+        {{#link-to "account" tagName="li"}}
+          {{#link-to "account"}}LOGOUT<i class="fa fa-user fa-fw"></i>{{currentUser.model.email}}{{/link-to }}
+        {{/link-to }}
       {{else}}
-        {{#link-to "login" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "login" class="nav-lists nav-links"}}SIGNIN{{/link-to }}{{/link-to }}
-      {{/if}}
-      {{#link-to "register" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "register" class="nav-lists nav-links"}}SIGNUP{{/link-to }}{{/link-to }}
-      {{#if (eq currentUser.model.email "admin@inveo.com")}}
-        {{#link-to "admin" tagName="li" href=false class="nav-lists nav-links"}}{{#link-to "admin" class="nav-lists nav-links"}}DASHBOARD{{/link-to }}{{/link-to }}
+        {{#link-to "index.login" tagName="li" href=false}}
+          {{#link-to "index.login"}}SIGNIN{{/link-to }}
+        {{/link-to }}
+        {{#link-to "index.register" tagName="li" href=false}}
+          {{#link-to "index.register"}}SIGNUP{{/link-to }}
+        {{/link-to }}
       {{/if}}
     </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+  </nav>
+</div>
 
 {{yield}}

@@ -1,0 +1,74 @@
+<div class="page-header">
+  <h1>Inveo Systems</h1>
+</div>
+
+ <div class="banner">
+   <h2>CRUSH YOUR COMPETION</h2>
+   <p>
+     Inveo Systems' custom gaming notebooks are built with the latest nex-gen
+     technology to offer an immersive gaming experience anywhere that you want to go.
+   </p>
+    <img class="d-min-img-size" src='/p870-0.png' alt="" />
+     <button class="button-primary">View Gaming Systems</button>
+   </div>
+
+    <div class="callouts">
+      <div class="callout">
+        <h2 class="callout-title">EVERYTHING YOU WILL EVER NEED</h2>
+          <div class="callout-body">
+            <p>
+              Equipped with high-performance mobile components that are on par with most
+              desktop computers, these are the best gaming laptops for handling any
+              application for work or school with incredible ease. Confidence is preeminent
+              on all custom Digital Storm notebooks with their ability to be versatile and
+              adaptable to any task you might throw at them.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h2 class="callout-title">THE POWER</h2>
+          <div class="callout-body">
+            <p>
+              Experience stunning visuals regardless of whether you’re plugged in at home or on
+              the go. Our laptops for gaming are equipped with powerful yet light-weight lithium
+              batteries that deliver hours of high-resolution, mouth-watering gaming; they don’t
+              under-perform just because there isn’t a wall socket nearby.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h2 class="callout-title">WANT MORE?</h2>
+          <div class="callout-body">
+            <p>
+              Unlike retailers that cram their gaming computers with “free” software you’ll never
+              use, Inveo Systems gaming laptops come absolutely clean. The only thing you’ll see
+              is an empty desktop that gives you the freedom to make your dream high-performance
+              PC your own. So if you need more, we'll give you more with our nex-gen machines
+              coming soon.
+            </p>
+         </div>
+      </div>
+
+    <div class="products-container">
+      <div class="products-header">
+        <h2>SELECT A MODEL</h2>
+      </div>
+      <ul>
+        {{#each model as |laptop|}}
+        <li>
+          <h3 class="product-title">{{laptop.name}}</h3>
+          <div class="product-body">
+            <p>{{laptop.description}}</p>
+            <img class="t-min-img-size" src="{{laptop.image}}" alt="" />
+            <p>{{laptop.screenSize}}" screen size</p>
+            <p>Starting at <strong>${{laptop.price}}<strong></p>
+            {{#link-to "order" (query-params item-id=laptop.id item-type="laptop") class="button-primary"}}SELECT{{/link-to}}
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+{{outlet}}

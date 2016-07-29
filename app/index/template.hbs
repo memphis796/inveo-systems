@@ -1,17 +1,19 @@
-<header class="navbar">
-
-  <div class="company-name__logo"><span class="company-name">Inveo</span> systems</div>
-
-    <nav class="navbar-links">
-      <button class="buttons">{{#link-to 'login' class="signin"}}SIGNIN{{/link-to}}</button>
-      <button class="buttons">{{#link-to 'register' class="signup"}}SIGNUP{{/link-to}}</button>
+<div class="index-route">
+  <div class="nav-container">
+    <h1>Inveo Systems &#174;</h1>
+    <nav class="nav">
+      <ul>
+        {{#link-to "index.login" tagName="li" href=false}}
+          {{#link-to "index.login"}}Log In{{/link-to}}
+        {{/link-to}}
+        {{#link-to "index.register" tagName="li" href=false}}
+          {{#link-to "index.register"}}Register{{/link-to}}
+        {{/link-to}}
+      </ul>
     </nav>
-
-</header>
-
-
-  <div class="home-img__container">
-
   </div>
 
-{{outlet}}
+  <div class="page-body">
+    {{outlet}}
+  </div>
+</div>

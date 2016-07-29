@@ -6,6 +6,6 @@ export default Ember.Controller.extend({
       if (confirm(`Are you sure you want to delete laptop #` + laptop.id + `?`)) {
         laptop.destroyRecord();
       }
-    }
-  }
+    },
+  },
 });

@@ -1,46 +1,53 @@
+<div class="page-header">
+  <h1>Edit Laptop</h1>
+</div>
+
+<div class="page-body">
 {{#simple-form startingValues=model onsubmit=(action updateLaptop model) as |laptop|}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">Editing Laptop #{{ laptop.id }}</h2>
+  <div class="form-header">
+    <h2>Laptop #{{laptop.id}}</h2>
+  </div>
+  <div class="form-field required">
+    <label for="laptop-name">Laptop Name</label>
+    {{input type="text" id="laptop-name" value=laptop.name}}
+  </div>
+
+  <div class="form-field required">
+    <label for="laptop-name">Laptop Color</label>
+    {{input type="text" id="laptop-color" value=laptop.color}}
+  </div>
+
+  <div class="form-field required">
+    <label for="laptop-description">Laptop Description</label>
+    {{textarea id="laptop-description" value=laptop.description}}
+  </div>
+
+  <div class="form-field required">
+    <label for="laptop-screen-size">Laptop Screen Size</label>
+    {{input type="text" id="laptop-screen-size" value=laptop.screenSize}}
+  </div>
+
+  <div class="form-field required">
+    <label for="laptop-price">Laptop Price</label>
+    {{input type="text" id="laptop-price" value=laptop.price}}
+  </div>
+
+  <div class="form-field required">
+    <label for="laptop-image">Laptop Image</label>
+    <div class="form-control">
+      <p>{{input type="text" id="laptop-image" value=laptop.image}}</p>
+      <img class="t-min-img-size" src="{{laptop.image}}" alt="" />
     </div>
-
-    <div class="panel-body">
-      <div class="form-group">
-        <label for="laptop-name">Laptop Name</label>
-        {{input type="text" id="laptop-name" class="form-control" value=laptop.name}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-name">Laptop Color</label>
-        {{input type="text" id="laptop-color" class="form-control" value=laptop.color}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-description">Laptop Description</label>
-        {{textarea id="laptop-description" class="form-control" value=laptop.description}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-screen-size">Laptop Screen Size</label>
-        {{input type="text" id="laptop-screen-size" class="form-control" value=laptop.screenSize}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-price">Laptop Price</label>
-        {{input type="text" id="laptop-price" class="form-control" value=laptop.price}}
-      </div>
-
-      <div class="form-group">
-        <label for="laptop-image">Laptop Image</label>
-        {{input type="text" id="laptop-image" class="form-control" value=laptop.image}}
-      </div>
-
-      <div class="form-group">
-        {{#link-to "admin.laptop" class="btn btn-default"}}Cancel{{/link-to}}
-        <button class="btn btn-primary">Save</button>
-      </div>
+    <div class="form-help">
+      <div class="form-help-text">NOTE: Image will not change until saved.</div>
     </div>
   </div>
-{{/simple-form}}
 
-{{outlet}}
+  <div class="form-submits">
+    {{#link-to "admin.laptop.index" class="button-secondary"}}Cancel{{/link-to}}
+    <button class="button-primary">Save</button>
+  </div>
+  {{/simple-form}}
+
+  {{outlet}}
+  </div>
